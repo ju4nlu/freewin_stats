@@ -1,7 +1,10 @@
 <!doctype html>
 <title>Hello from Flask</title>
-{% if username %}
-  <h1>Hello {{ username }}!</h1>
+{% if details %}
+  <h1>Hello {{ details.nickname }}!</h1>
+  <a> {{ details }} </a>
 {% else %}
   <h1>Hello, stranger!</h1>
 {% endif %}
+
+<!-- https://codepen.io/enbee81/details/yLyrmyg -->
