@@ -1,4 +1,5 @@
 from flask import Flask, escape, request, render_template
+from freewin_stats.stats import get_player_details
 
 app = Flask(__name__)
 
@@ -14,8 +15,9 @@ def hello():
 @app.route('/player/')
 @app.route('/player/<string:username>')
 def show_user_profile(username: str = None):
+    #return get_player_details(username)
     return render_template('hello.html', 
-                           username=username)
+                           details=get_player_details(username))
 
 @app.route('/match/')
 @app.route('/match/<uuid:post_id>')
